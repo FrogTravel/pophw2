@@ -16,7 +16,13 @@ object Main {
    zip of {1, 8} and {9, 2, 4, 7} is eqaul to {1, 9, 8, 2, 4, 7}.  
    */
 
-  def zip(l1: IList, l2:IList): IList = ???
+  def zip(l1: IList, l2: IList): IList = {
+    l1 match {
+      case ICons(x1, tl) => ICons(x1, zip(l2, tl))
+      case INil() => l2
+    }
+  }
+
 
   /*
    Exercise 2: Exp calculator with square
